@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VietDocAI</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">VD</div>
+          <div>
+            <h1>VietDocAI</h1>
+            <p class="subtitle">OCR workspace</p>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <div class="health" id="healthStatus">Đang kiểm tra</div>
+        </div>
+      </header>
+
+      <section class="upload-panel">
+        <div>
+          <p class="eyebrow">Tạo OCR job</p>
+          <h2>Tải tài liệu lên</h2>
+        </div>
+
+        <form id="uploadForm" class="upload-form">
+          <label class="dropzone" for="fileInput">
+            <span id="fileLabel">Chọn file hoặc kéo thả</span>
+            <small>PDF, JPG, PNG, TIFF</small>
+            <input id="fileInput" name="file" type="file" accept=".jpg,.jpeg,.png,.pdf,.tif,.tiff" />
+          </label>
+          <button type="submit">Gửi OCR</button>
+        </form>
+
+        <p id="message" class="message" role="status"></p>
+      </section>
+
+      <section class="workspace">
+        <aside class="list-panel">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Queue</p>
+              <h2>Document gần đây</h2>
+            </div>
+            <button id="refreshButton" type="button">Làm mới</button>
+          </div>
+          <div id="documentList" class="document-list"></div>
+        </aside>
+
+        <section class="detail-panel">
+          <div id="emptyState" class="empty-state">
+            Chọn một document để xem trạng thái và kết quả OCR.
+          </div>
+          <article id="documentDetail" class="document-detail hidden"></article>
+        </section>
+      </section>
+    </main>
+
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
